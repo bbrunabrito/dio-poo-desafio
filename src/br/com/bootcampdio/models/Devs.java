@@ -5,15 +5,15 @@ import java.util.Objects;
 
 public class Devs {
     private String nome;
-    private List<Mentorias> mentoriasLista;
-    private List<Cursos> cursosLista;
+    private Bootcamp bootcamp;
+    private Double progresso;
+    private Double xpTotal;
 
 
     public Devs() {}
-    public Devs(String nome, List<Mentorias> mentoriasLista, List<Cursos> cursosLista) {
+    public Devs(String nome) {
         this.nome = nome;
-        this.mentoriasLista = mentoriasLista;
-        this.cursosLista = cursosLista;
+        this.progresso = 0d;
     }
 
     public String getNome() {
@@ -24,40 +24,49 @@ public class Devs {
         this.nome = nome;
     }
 
-    public List<Mentorias> getMentoriasLista() {
-        return mentoriasLista;
+    public Bootcamp getBootcamp() {
+        return bootcamp;
     }
 
-    public void setMentoriasLista(List<Mentorias> mentoriasLista) {
-        this.mentoriasLista = mentoriasLista;
+    public void setBootcamp(Bootcamp bootcamp) {
+        this.bootcamp = bootcamp;
     }
 
-    public List<Cursos> getCursosLista() {
-        return cursosLista;
+    public Double getProgresso() {
+        return progresso;
     }
 
-    public void setCursosLista(List<Cursos> cursosLista) {
-        this.cursosLista = cursosLista;
+    public Double getXpTotal() {
+        return xpTotal;
+    }
+
+    public void setXpTotal(Double xpTotal) {
+        this.xpTotal = xpTotal;
+    }
+
+    public void setProgresso(Double progresso) {
+        this.progresso = progresso;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Devs devs)) return false;
-        return Objects.equals(nome, devs.nome) && Objects.equals(mentoriasLista, devs.mentoriasLista) && Objects.equals(cursosLista, devs.cursosLista);
+        return Objects.equals(nome, devs.nome) && Objects.equals(bootcamp, devs.bootcamp) && Objects.equals(progresso, devs.progresso) && Objects.equals(xpTotal, devs.xpTotal);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome, mentoriasLista, cursosLista);
+        return Objects.hash(nome, bootcamp, progresso, xpTotal);
     }
 
     @Override
     public String toString() {
         return "Devs{" +
                 "nome='" + nome + '\'' +
-                ", mentoriasLista=" + mentoriasLista +
-                ", cursosLista=" + cursosLista +
+                ", bootcamp=" + bootcamp.getNome() +
+                ", progresso=" + progresso +
+                ", xpTotal=" + xpTotal +
                 '}';
     }
 }

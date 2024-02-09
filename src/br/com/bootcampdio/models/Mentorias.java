@@ -8,6 +8,7 @@ public class Mentorias extends Conteudo implements CalculaXpInterface {
     private LocalDate dataMentoria;
 
 
+
     public Mentorias(){}
     public Mentorias(String titulo, String descricao, LocalDate dataMentoria) {
         super(titulo, descricao);
@@ -23,7 +24,7 @@ public class Mentorias extends Conteudo implements CalculaXpInterface {
     }
 
     @Override
-    public void calculaXp() {
-
+    public Double calculaXp() {
+        return 10d;
     }
 }

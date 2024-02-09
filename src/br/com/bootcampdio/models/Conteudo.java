@@ -3,13 +3,13 @@ package br.com.bootcampdio.models;
 public class Conteudo {
     private String titulo;
     private String descricao;
-    private String status;
+    private Double status;
 
     public Conteudo() {}
     public Conteudo(String titulo, String descricao) {
         this.titulo = titulo;
         this.descricao = descricao;
-        this.status = "Não inicializado";
+        this.status = 0d;
     }
 
     public String getTitulo() {
@@ -28,11 +28,11 @@ public class Conteudo {
         this.descricao = descricao;
     }
 
-    public String getStatus() {
+    public Double getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(Double status) {
         this.status = status;
     }
 }
